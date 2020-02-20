@@ -20,15 +20,14 @@ export class Pillars {
 };
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-export const ops = {
-    double: {
+export const ops = Object.freeze({
+    "double": Object.freeze({
         '%'     :"modulus",
         '^'     :"xor",
         '&'     :"and",
         '*'     :"multiply",
         '-'     :"substract",
         '+'     :"addition",
-        '='     :"assign",
         '/'     :"divide",
         '<'     :"less than",
         '>'     :"greater than",
@@ -38,18 +37,33 @@ export const ops = {
         '==='   :"absolutely equals",
         '>>'    :"bitwise downshift",
         '<<'    :"bitwise upshift",
-        '>>='   :"bitwise downshift assign",
-        '<<='   :"bitwise upshift assign",
         '||'    :"OR",
         '&&'    :"AND",
         '**'    :"power"
-    },
-    single: {
+    }),
+    "single": Object.freeze({
         "typeof":"check datatype",
         "!":    "NOT",
         "~":    "not"
-    }
-};
+    }),
+    "other": Object.freeze({
+        '<='    :"less than equals",
+        '>='    :"greater than equals"
+    }),
+    "left-hand":Object.freeze({
+        '='     :"assign",
+        '+='    :"addition assign",
+        '-='    :"substraction assign",
+        '*='    :"multiply assign",
+        '/='    :"divide assign",
+        '^='    :"xor assign",
+        '%='    :"modulous assign",
+        '**='   :"power assign",
+        '>>='   :"bitwise downshift assign",
+        '<<='   :"bitwise upshift assign",
+        '&='    :"and assign"
+    })
+});
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 export class PageManager{}
