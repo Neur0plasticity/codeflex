@@ -7,7 +7,14 @@ console.warn(`
     * ALL ON THE TERMINAL
     * Uses numbers, other datatypes coming soon
 `);
-export class Pillars {
+console.warn(`
+FIRST INSTRUCTION
+
+    0) TURN ON CANVAS MSG THROUGH CODE
+
+    ** HINT WRITE document.getElementById('msg').style.display="block"
+`)
+/*export*/ class Pillars {
     pillars = {
         0: Computation,     // COMPLETE
         1: Debugging,       // COMPLETE
@@ -20,7 +27,7 @@ export class Pillars {
 };
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-export const ops = Object.freeze({
+/*export*/ const ops = Object.freeze({
     "double": Object.freeze({
         '%'     :"modulus",
         '^'     :"xor",
@@ -66,45 +73,50 @@ export const ops = Object.freeze({
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-export class PageManager{}
-export class Questionaire{}
+/*export*/ class PageManager{
+    constructor(){
+        new IO_Chart().render();
+        new CodeInput().render();
+    }
+}
+/*export*/ class Questionaire{}
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-export class IO_Chart{
+/*export*/ class IO_Chart{
     populate(){}
     populateInput(){}
     populateOutput(){}
 }
-export class CodeInput{
+/*export*/ class CodeInput{
     submit(){}
     check(){}
     new(){}
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////s
-export class Computation{
+/*export*/ class Computation{
     static currentProblem;
     static currentAttempt;
     static getRandV     = v => Math.round(100*Math.random());
-    static getRandOp    = v => Object.keys(ops.single)[Math.round(Object.keys(ops.single).length * Math.random())];
-    genProblem  (){  
+    static getRandOp    = v => Object.keys(ops.double)[Math.round(Object.keys(ops.double).length * Math.random())];
+    public genProblem  (){  
         Computation.currentProblem = `${Computation.getRandV(0)} ${Computation.getRandOp(0)} ${Computation.getRandV(0)}`; 
         return Computation.currentProblem;
     }
-    checkProblem(attempt){
+    public checkProblem(attempt){
         Computation.currentAttempt = attempt;
         let b;
         eval(`b = (${Computation.currentProblem}) === ${Computation.currentAttempt}`);
         return b;
     }
-    solveProblem(exp){
+    public solveProblem(exp){
         let b;
         if (typeof exp === "string") eval(exp || `b = (${Computation.currentProblem})`);
         else eval(`b = ${exp}`);
         return b;   
     }
 }
-export class Debugging{
+/*export*/ class Debugging{
     static computation = new Computation();
     static currentProblem = ``;
     static scrambledProblem = ``;
@@ -135,7 +147,7 @@ export class Debugging{
         return b;   
     }
 }
-export class Algorithms{
+/*export*/ class Algorithms{
     static computation = new Computation();
     static currentProblem = ``; // str-evaled
     static currentAttempt;
@@ -155,7 +167,7 @@ export class Algorithms{
     }   
     solveProblem(){throw new Error("not allowed");}
 }
-export class Organization{
+/*export*/ class Organization{
     constructor(){
         console.warn(`Write Compartmentalization algorithms`);
     }
@@ -168,7 +180,7 @@ export class Organization{
         `USE TRANSPILER MODULE CODEBRARIAN  : :) :) :) :) :) :) :) :) :) :) :) :) :) :) `
     ];
 }
-export class Optimization{
+/*export*/ class Optimization{
     constructor(){
         console.warn(`write new faster algorithms for same IO-SET`);
     }
@@ -180,7 +192,7 @@ export class Optimization{
         "memory-swap":[]
     };
 }
-export class AdvDebugging{
+/*export*/ class AdvDebugging{
     constructor(){}
     public lesson(){}
     static lessons = {
@@ -191,14 +203,14 @@ export class AdvDebugging{
         "async mem manage":[]
     };
 }
-export class Projects{
+/*export*/ class Projects{
     public project(){}
     static projects = [
         `Alarmclock`,
         `PushNotifications`
     ];
 }
-export const spec_AlarmClock = function(Alg:Function){
+/*export*/ const spec_AlarmClock = function(Alg:Function){
     const a = new Alg();
     a.user('new',{
         name:   "bob",
@@ -225,7 +237,7 @@ export const spec_AlarmClock = function(Alg:Function){
         pwd:    "12345678",
     });
 };
-export const spec_PushNotifications = function(){};
+/*export*/ const spec_PushNotifications = function(){};
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 (function spec(alg){

@@ -1,8 +1,8 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 console.warn("CURRENT GENERATING NUMBER PROBLEMS ONLY");
 console.warn("\n    HOW TO PLAY\n    * TERMINAL ONLY GAME\n    * PLAY WITH THE APIS\n    * SOLVE THERE PROBLEMS\n    * ALL ON THE TERMINAL\n    * Uses numbers, other datatypes coming soon\n");
-var Pillars = /** @class */ (function () {
+console.warn("\nFIRST INSTRUCTION\n\n    0) TURN ON CANVAS MSG THROUGH CODE\n\n    ** HINT WRITE document.getElementById('msg').style.display=\"block\"\n");
+/*export*/ var Pillars = /** @class */ (function () {
     function Pillars() {
         this.pillars = {
             0: Computation,
@@ -16,19 +16,17 @@ var Pillars = /** @class */ (function () {
     }
     return Pillars;
 }());
-exports.Pillars = Pillars;
 ;
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-exports.ops = {
-    double: {
+/*export*/ var ops = Object.freeze({
+    "double": Object.freeze({
         '%': "modulus",
         '^': "xor",
         '&': "and",
         '*': "multiply",
         '-': "substract",
         '+': "addition",
-        '=': "assign",
         '/': "divide",
         '<': "less than",
         '>': "greater than",
@@ -38,35 +36,50 @@ exports.ops = {
         '===': "absolutely equals",
         '>>': "bitwise downshift",
         '<<': "bitwise upshift",
-        '>>=': "bitwise downshift assign",
-        '<<=': "bitwise upshift assign",
         '||': "OR",
         '&&': "AND",
         '**': "power"
-    },
-    single: {
+    }),
+    "single": Object.freeze({
         "typeof": "check datatype",
         "!": "NOT",
         "~": "not"
-    }
-};
+    }),
+    "other": Object.freeze({
+        '<=': "less than equals",
+        '>=': "greater than equals"
+    }),
+    "left-hand": Object.freeze({
+        '=': "assign",
+        '+=': "addition assign",
+        '-=': "substraction assign",
+        '*=': "multiply assign",
+        '/=': "divide assign",
+        '^=': "xor assign",
+        '%=': "modulous assign",
+        '**=': "power assign",
+        '>>=': "bitwise downshift assign",
+        '<<=': "bitwise upshift assign",
+        '&=': "and assign"
+    })
+});
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-var PageManager = /** @class */ (function () {
+/*export*/ var PageManager = /** @class */ (function () {
     function PageManager() {
+        new IO_Chart().render();
+        new CodeInput().render();
     }
     return PageManager;
 }());
-exports.PageManager = PageManager;
-var Questionaire = /** @class */ (function () {
+/*export*/ var Questionaire = /** @class */ (function () {
     function Questionaire() {
     }
     return Questionaire;
 }());
-exports.Questionaire = Questionaire;
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-var IO_Chart = /** @class */ (function () {
+/*export*/ var IO_Chart = /** @class */ (function () {
     function IO_Chart() {
     }
     IO_Chart.prototype.populate = function () { };
@@ -74,8 +87,7 @@ var IO_Chart = /** @class */ (function () {
     IO_Chart.prototype.populateOutput = function () { };
     return IO_Chart;
 }());
-exports.IO_Chart = IO_Chart;
-var CodeInput = /** @class */ (function () {
+/*export*/ var CodeInput = /** @class */ (function () {
     function CodeInput() {
     }
     CodeInput.prototype.submit = function () { };
@@ -83,10 +95,9 @@ var CodeInput = /** @class */ (function () {
     CodeInput.prototype.new = function () { };
     return CodeInput;
 }());
-exports.CodeInput = CodeInput;
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////s
-var Computation = /** @class */ (function () {
+/*export*/ var Computation = /** @class */ (function () {
     function Computation() {
     }
     Computation.prototype.genProblem = function () {
@@ -108,11 +119,10 @@ var Computation = /** @class */ (function () {
         return b;
     };
     Computation.getRandV = function (v) { return Math.round(100 * Math.random()); };
-    Computation.getRandOp = function (v) { return Object.keys(exports.ops.single)[Math.round(Object.keys(exports.ops.single).length * Math.random())]; };
+    Computation.getRandOp = function (v) { return Object.keys(ops.double)[Math.round(Object.keys(ops.double).length * Math.random())]; };
     return Computation;
 }());
-exports.Computation = Computation;
-var Debugging = /** @class */ (function () {
+/*export*/ var Debugging = /** @class */ (function () {
     function Debugging() {
     }
     Debugging.prototype.genProblem = function (n) {
@@ -148,8 +158,7 @@ var Debugging = /** @class */ (function () {
     Debugging.scrambledProblem = "";
     return Debugging;
 }());
-exports.Debugging = Debugging;
-var Algorithms = /** @class */ (function () {
+/*export*/ var Algorithms = /** @class */ (function () {
     function Algorithms() {
     }
     Algorithms.prototype.genProblem = function (n) {
@@ -176,8 +185,7 @@ var Algorithms = /** @class */ (function () {
     Algorithms.dataset = [];
     return Algorithms;
 }());
-exports.Algorithms = Algorithms;
-var Organization = /** @class */ (function () {
+/*export*/ var Organization = /** @class */ (function () {
     function Organization() {
         console.warn("Write Compartmentalization algorithms");
     }
@@ -191,8 +199,7 @@ var Organization = /** @class */ (function () {
     ];
     return Organization;
 }());
-exports.Organization = Organization;
-var Optimization = /** @class */ (function () {
+/*export*/ var Optimization = /** @class */ (function () {
     function Optimization() {
         console.warn("write new faster algorithms for same IO-SET");
     }
@@ -205,8 +212,7 @@ var Optimization = /** @class */ (function () {
     };
     return Optimization;
 }());
-exports.Optimization = Optimization;
-var AdvDebugging = /** @class */ (function () {
+/*export*/ var AdvDebugging = /** @class */ (function () {
     function AdvDebugging() {
     }
     AdvDebugging.prototype.lesson = function () { };
@@ -219,8 +225,7 @@ var AdvDebugging = /** @class */ (function () {
     };
     return AdvDebugging;
 }());
-exports.AdvDebugging = AdvDebugging;
-var Projects = /** @class */ (function () {
+/*export*/ var Projects = /** @class */ (function () {
     function Projects() {
     }
     Projects.prototype.project = function () { };
@@ -230,8 +235,7 @@ var Projects = /** @class */ (function () {
     ];
     return Projects;
 }());
-exports.Projects = Projects;
-exports.spec_AlarmClock = function (Alg) {
+/*export*/ var spec_AlarmClock = function (Alg) {
     var a = new Alg();
     a.user('new', {
         name: "bob",
@@ -258,7 +262,7 @@ exports.spec_AlarmClock = function (Alg) {
         pwd: "12345678",
     });
 };
-exports.spec_PushNotifications = function () { };
+/*export*/ var spec_PushNotifications = function () { };
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 (function spec(alg) {
