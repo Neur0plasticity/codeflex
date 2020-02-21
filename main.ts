@@ -62,10 +62,14 @@ FIFTH INSTRUCTION
 ** terminal: const c = new Computation();
 
 SIXTH INSTRUCTION
-
+6) !!!PROGRAM!!!
 ** Program a personal difficulty into the Computation
+** Difficulty 
+
+SEVENTH INSTRUCTION
+7) BUILD FUNCTIONAL DEBUGGING UI
 `
-];console.log(...INSTRUCTIONS); 
+];console.warn(...INSTRUCTIONS); 
 
 
 /*export*/ class Pillars {
@@ -301,10 +305,34 @@ SIXTH INSTRUCTION
 //////////////////////////////////////////////////////////////////////////////////////////
 const help = function(){console.log(INSTRUCTIONS);};
 const viewsrc = function(){};
-const Instruction = Object.assign(function(){
-
-},
+const Instruction = Object.assign(function(){},
 {
     next: function(){},
     prev: function(){}    
 });
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+const $$$ = class $$$ {
+static $                                 = 0;
+static earn(g:number,n:number):void      {$$$.$ += g;};
+public programmed   (n):void             {$$$.earn(10*(n||1));}
+public instructioned(n):void             {$$$.earn(2*(n||1));}
+public observed     (n):void             {$$$.earn(1*(n||1));}
+public failed       (n):void             {$$$.earn(3*(n||1));}
+};
+const TerminalWatch = class {
+static terminals = null;
+public constructor(){
+    TerminalWatch.load();
+}
+static load(){
+    TerminalWatch.terminals === null || (TerminalWatch.terminals = true); 
+
+
+}
+}
+const TERMINAL = function(script:string){
+    console.log(script);
+};
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
