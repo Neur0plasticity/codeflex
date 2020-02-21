@@ -151,29 +151,34 @@ SEVENTH INSTRUCTION
     new(){}
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////s
-/*export*/ class Computation{
-    static currentProblem;
-    static currentAttempt;
-    static getRandV     = v => Math.round(100*Math.random());
-    static getRandOp    = v => Object.keys(ops.double)[Math.round(Object.keys(ops.double).length * Math.random())];
-    public genProblem  (){  
-        Computation.currentProblem = `${Computation.getRandV(0)} ${Computation.getRandOp(0)} ${Computation.getRandV(0)}`; 
-        return Computation.currentProblem;
+//////////////////////////////////////////////////////////////////////////////////////////
+let   currentProblem    = ``;
+let   currentAttempt    = ``;
+let   dataset           = [];
+const getRandV          = v => Math.round(v*Math.random());
+const getRandOp         = v => Object.keys(ops.double)[Math.round(Object.keys(ops.double).length * Math.random())];
+const genProblem        = v => currentProblem+=`${getRandV(0)} ${getRandOp(100)} ${getRandV(100)}`.repeat(v); 
+const checkProblem      = v => (eval(`v = (${currentProblem}) === ${currentAttempt}`),v);
+const solveProblem      = (exp,v) => (eval(exp || `v = (${currentProblem})`),v);   
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+const ABSTRACT_CLASS_PILLAR = {
+    static:{
+        currentProblem,
+        currentAttempt,
+        getRandV,
+        getRandOp
+    },
+    public:{
+        genProblem,
+        checkProblem,
+        solveProblem
     }
-    public checkProblem(attempt){
-        Computation.currentAttempt = attempt;
-        let b;
-        eval(`b = (${Computation.currentProblem}) === ${Computation.currentAttempt}`);
-        return b;
-    }
-    public solveProblem(exp){
-        let b;
-        if (typeof exp === "string") eval(exp || `b = (${Computation.currentProblem})`);
-        else eval(`b = ${exp}`);
-        return b;   
-    }
-}
+};
+const Computation = CLASS("Computation",ABSTRACT_CLASS_PILLAR);
+const Debugging   = CLASS("Debugging",  ABSTRACT_CLASS_PILLAR,  {static:{computation: new Computation()}});
+const Algorithms  = CLASS("Algorithms", ABSTRACT_CLASS_PILLAR,  {public:{genProblem:  v => genProblem(v)}});
+
 /*export*/ class Debugging{
     static computation = new Computation();
     static currentProblem = ``;

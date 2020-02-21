@@ -104,32 +104,33 @@ console.warn.apply(console, INSTRUCTIONS);
     return CodeInput;
 }());
 //////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////s
-/*export*/ var Computation = /** @class */ (function () {
-    function Computation() {
+//////////////////////////////////////////////////////////////////////////////////////////
+var currentProblem = "";
+var currentAttempt = "";
+var dataset = [];
+var getRandV = function (v) { return Math.round(v * Math.random()); };
+var getRandOp = function (v) { return Object.keys(ops.double)[Math.round(Object.keys(ops.double).length * Math.random())]; };
+var genProblem = function (v) { return currentProblem += (getRandV(0) + " " + getRandOp(100) + " " + getRandV(100)).repeat(v); };
+var checkProblem = function (v) { return (eval("v = (" + currentProblem + ") === " + currentAttempt), v); };
+var solveProblem = function (exp, v) { return (eval(exp || "v = (" + currentProblem + ")"), v); };
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+var ABSTRACT_CLASS_PILLAR = {
+    static: {
+        currentProblem: currentProblem,
+        currentAttempt: currentAttempt,
+        getRandV: getRandV,
+        getRandOp: getRandOp
+    },
+    public: {
+        genProblem: genProblem,
+        checkProblem: checkProblem,
+        solveProblem: solveProblem
     }
-    Computation.prototype.genProblem = function () {
-        Computation.currentProblem = Computation.getRandV(0) + " " + Computation.getRandOp(0) + " " + Computation.getRandV(0);
-        return Computation.currentProblem;
-    };
-    Computation.prototype.checkProblem = function (attempt) {
-        Computation.currentAttempt = attempt;
-        var b;
-        eval("b = (" + Computation.currentProblem + ") === " + Computation.currentAttempt);
-        return b;
-    };
-    Computation.prototype.solveProblem = function (exp) {
-        var b;
-        if (typeof exp === "string")
-            eval(exp || "b = (" + Computation.currentProblem + ")");
-        else
-            eval("b = " + exp);
-        return b;
-    };
-    Computation.getRandV = function (v) { return Math.round(100 * Math.random()); };
-    Computation.getRandOp = function (v) { return Object.keys(ops.double)[Math.round(Object.keys(ops.double).length * Math.random())]; };
-    return Computation;
-}());
+};
+var Computation = CLASS("Computation", ABSTRACT_CLASS_PILLAR);
+var Debugging = CLASS("Debugging", ABSTRACT_CLASS_PILLAR, { static: { computation: new Computation() } });
+var Algorithms = CLASS("Algorithms", ABSTRACT_CLASS_PILLAR, { public: { genProblem: function (v) { return genProblem(v); } } });
 /*export*/ var Debugging = /** @class */ (function () {
     function Debugging() {
     }
