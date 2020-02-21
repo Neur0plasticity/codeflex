@@ -1,19 +1,60 @@
 console.warn("CURRENT GENERATING NUMBER PROBLEMS ONLY");
-console.warn(`
-    HOW TO PLAY
-    * TERMINAL ONLY GAME
-    * PLAY WITH THE APIS
-    * SOLVE THERE PROBLEMS
-    * ALL ON THE TERMINAL
-    * Uses numbers, other datatypes coming soon
-`);
-console.warn(`
+const INSTRUCTIONS = [
+`
+HOW TO PLAY
+* TERMINAL ONLY GAME
+* PLAY WITH THE APIS
+* SOLVE THERE PROBLEMS
+* ALL ON THE TERMINAL
+* Uses numbers, other datatypes coming soon
+* Have Google Search on Standby
+* Get to know the source code
+* observe the evolving source code changes
+
+RANDOM HINT
+- LOOK UP, VIEW THINGS THROUGH ALL TABS, INCLUDING ELEMENTS
+`,
+`
+WARNING
+* site saves progress with cache & cookies
+* does not connect to remote server
+* leave cookies & cache unblocked
+* do not use incognito browser
+`,
+`
 FIRST INSTRUCTION
 
-    0) TURN ON CANVAS MSG THROUGH CODE
+0) TURN ON CANVAS MSG THROUGH CODE
 
-    ** HINT WRITE document.getElementById('msg').style.display="block"
-`)
+** HINT WRITE document.getElementById('msg').style.display="block"
+
+1) VIEW SOURCE CODE SCRIPTS
+
+** HINT WRITE console.log(document.scripts);
+** document.location.href.replace("main.html","main.js")
+** after viewing src code, goback
+`,
+`
+SECOND INSTRUCTION
+
+2) MAKE SRC CODE VISUAL WITH IFRAMES
+
+** HINT mimic prior instructions
+** Look at the HTML
+`,
+`
+THIRD INSTRUCTION
+
+3) PROGRESSIVELY BUILD UI THROUGH CODE
+`,
+`
+FOURTH INSTRUCTION
+
+4) OBSERVE CODE CHANGES
+`
+];console.log(...INSTRUCTIONS); 
+
+
 /*export*/ class Pillars {
     pillars = {
         0: Computation,     // COMPLETE
@@ -243,3 +284,14 @@ FIRST INSTRUCTION
 (function spec(alg){
     console.log(alg)
 })();
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+const help = function(){console.log(INSTRUCTIONS);};
+const viewsrc = function(){};
+const Instruction = Object.assign(function(){
+
+},
+{
+    next: function(){},
+    prev: function(){}    
+});
