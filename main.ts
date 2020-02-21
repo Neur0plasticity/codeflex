@@ -52,6 +52,18 @@ THIRD INSTRUCTION
 FOURTH INSTRUCTION
 
 4) OBSERVE CODE CHANGES
+
+FIFTH INSTRUCTION
+
+5) BUILD FIRST FUNCTIONAL UI
+
+** Search 'Pillars'
+** Computation is the first pillar
+** terminal: const c = new Computation();
+
+SIXTH INSTRUCTION
+
+** Program a personal difficulty into the Computation
 `
 ];console.log(...INSTRUCTIONS); 
 
