@@ -16,6 +16,7 @@ RANDOM HINT
 `,
 `
 WARNING
+* know the language before playing
 * site saves progress with cache & cookies
 * does not connect to remote server
 * leave cookies & cache unblocked
