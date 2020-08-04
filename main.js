@@ -1,14 +1,5 @@
 "use strict";
 var _a, _b;
-console.warn("CURRENT GENERATING NUMBER PROBLEMS ONLY");
-var INSTRUCTIONS = [
-    "\nHOW TO PLAY\n* TERMINAL ONLY GAME\n* PLAY WITH THE APIS\n* SOLVE THERE PROBLEMS\n* ALL ON THE TERMINAL\n* Uses numbers, other datatypes coming soon\n* Have Google Search on Standby\n* Get to know the source code\n* observe the evolving source code changes\n\nRANDOM HINT\n- LOOK UP, VIEW THINGS THROUGH ALL TABS, INCLUDING ELEMENTS\n",
-    "\nWARNING\n* know the language before playing\n* site saves progress with cache & cookies\n* does not connect to remote server\n* leave cookies & cache unblocked\n* do not use incognito browser\n",
-    "\nFIRST INSTRUCTION\n\n0) TURN ON CANVAS MSG THROUGH CODE\n\n** HINT WRITE document.getElementById('msg').style.display=\"block\"\n\n1) VIEW SOURCE CODE SCRIPTS\n\n** HINT WRITE console.log(document.scripts);\n** document.location.href.replace(\"main.html\",\"main.js\")\n** after viewing src code, goback\n",
-    "\nSECOND INSTRUCTION\n\n2) MAKE SRC CODE VISUAL WITH IFRAMES\n\n** HINT mimic prior instructions\n** Look at the HTML\n",
-    "\nTHIRD INSTRUCTION\n\n3) PROGRESSIVELY BUILD UI THROUGH CODE\n",
-    "\nFOURTH INSTRUCTION\n\n4) OBSERVE CODE CHANGES\n\nFIFTH INSTRUCTION\n\n5) BUILD FIRST FUNCTIONAL UI\n\n** Search 'Pillars'\n** Computation is the first pillar\n** terminal: const c = new Computation();\n\nSIXTH INSTRUCTION\n6) !!!PROGRAM!!!\n** Program a personal difficulty into the Computation\n** Difficulty \n\nSEVENTH INSTRUCTION\n7) BUILD FUNCTIONAL DEBUGGING UI\n"
-];
 console.warn.apply(console, INSTRUCTIONS);
 /*export*/ var Pillars = /** @class */ (function () {
     function Pillars() {
@@ -277,42 +268,5 @@ var Algorithms = CLASS("Algorithms", ABSTRACT_CLASS_PILLAR, { public: { genProbl
 (function spec(alg) {
     console.log(alg);
 })();
-//////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-var help = function () { console.log(INSTRUCTIONS); };
-var viewsrc = function () { };
-var Instruction = Object.assign(function () { }, {
-    next: function () { },
-    prev: function () { }
-});
-//////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-var $$$ = (_a = /** @class */ (function () {
-        function $$$() {
-        }
-        $$$.earn = function (g, n) { $$$.$ += g; };
-        ;
-        $$$.prototype.programmed = function (n) { $$$.earn(10 * (n || 1)); };
-        $$$.prototype.instructioned = function (n) { $$$.earn(2 * (n || 1)); };
-        $$$.prototype.observed = function (n) { $$$.earn(1 * (n || 1)); };
-        $$$.prototype.failed = function (n) { $$$.earn(3 * (n || 1)); };
-        return $$$;
-    }()),
-    _a.$ = 0,
-    _a);
-var TerminalWatch = (_b = /** @class */ (function () {
-        function class_1() {
-            TerminalWatch.load();
-        }
-        class_1.load = function () {
-            TerminalWatch.terminals === null || (TerminalWatch.terminals = true);
-        };
-        return class_1;
-    }()),
-    _b.terminals = null,
-    _b);
-var TERMINAL = function (script) {
-    console.log(script);
-};
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
